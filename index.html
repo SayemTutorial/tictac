@@ -1,0 +1,45 @@
+.tic-tac-toe
+  - for (var turn = 1; turn &lt;= 9; turn++)
+    - for (var row = 1; row &lt;= 3; row++)
+      - for (var column = 1; column &lt;= 3; column++)
+        - var player = &quot;1&quot;
+        - var positionHorizontal = &quot;&quot;
+        - var positionVertical = &quot;&quot;
+        - var positionDiagonal = &quot;&quot;
+        
+        if( turn % 2 == 0 )
+          - var player = &quot;2&quot;
+          
+        if( column == 1 )
+          - var positionHorizontal = &quot; left first-column&quot;
+        else if( column == 2 )
+          - var positionHorizontal = &quot; middle second-column&quot;
+        else if( column == 3 )
+          - var positionHorizontal = &quot; right third-column&quot;
+         
+        if( row == 1 )
+          - var positionVertical = &quot; top first-row&quot;
+        else if( row == 2 )
+          - var positionVertical = &quot; center second-row&quot;
+        else if( row == 3 )
+          - var positionVertical = &quot; bottom third-row&quot;
+        
+        if( row == 1 &amp;&amp; column == 1 )
+          - var positionDiagonal = &quot; first-diagonal&quot;
+        else if( row == 1 &amp;&amp; column == 3 )
+          - var positionDiagonal = &quot; second-diagonal&quot;
+        else if( row == 2 &amp;&amp; column == 2 )
+          - var positionDiagonal = &quot; first-diagonal second-diagonal&quot;
+        else if( row == 3 &amp;&amp; column == 1 )
+          - var positionDiagonal = &quot; second-diagonal&quot;
+        else if( row == 3 &amp;&amp; column == 3 )
+          - var positionDiagonal = &quot; first-diagonal&quot;
+        
+        input(id=&quot;block&quot; + turn + &quot;-&quot; + row + &quot;-&quot; + column type=&quot;radio&quot; class=&quot;player-&quot; + player + positionHorizontal + positionVertical + positionDiagonal + &quot; turn-&quot; + turn)
+        label(for=&quot;block&quot; + turn + &quot;-&quot; + row + &quot;-&quot; + column class=&quot;turn-&quot; + turn)
+
+  .end
+    h3
+    a(href=&quot;&quot;) Restart
+    
+h5 Note: use the Full Page view for the best experience.
